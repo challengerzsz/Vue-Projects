@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>first vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id='app'>
+        {{message}}
+        <br>
+
+        <span v-bind:title="message">
+            测试悬停
+        </span>
+
+        <ol>
+            <li v-for="item in items">
+                {{item.content}}
+            </li>
+        </ol>
+    </div>
+
+    <div id='span'>
+        <span v-bind:title="message">
+            测试悬停
+        </span>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello world',
+                items: [
+                    {content: '123'},
+                    {content: '456'},
+                    {content: '789'}
+                ]
+            }
+        })
+        var span = new Vue({
+            el: '#span',
+            data: {
+                message: 'test span'
+            }
+        })
+    </script>
+</body>
